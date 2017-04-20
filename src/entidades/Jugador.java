@@ -1,12 +1,16 @@
-package entitiades;
+package entidades;
+
+import java.util.ArrayList;
 
 import interfaces.IPersonaje;
 
+import controladores.ItemManager;
+
 public class Jugador implements IPersonaje {
-	private int vida, mana;
+	private int vida, mana, ataque, defensa;
 	private String nombre;
-	//private Inventario inv;
-	
+	private ArrayList<Item> inventario;
+	private ItemManager itemManager = new ItemManager();
 	
 	public Jugador(){
 		this.vida = 100;
@@ -58,13 +62,26 @@ public class Jugador implements IPersonaje {
 		else {this.mana -= mana;}
 	}
 	
-//	public void cogerObjecto(Item e){
-//		this.inv.add(e);
-//	}
-//
-//	public void eliminarObjecto(item e){
-//		this.inv.remove(e);
-//	}
+	public void removeItem(int id) { //From the inventory
+		Item item = itemManager.searchItem(id,inventario);
+		if (item == null)
+			return;
+		if(item.getCantidad() <= 1){
+			inventario.remove(item);
+		}else{
+			item.setCantidad(item.getCantidad()-1);
+		}
+	}
+	
+	public void addItem(int id) { //From the inventory
+		if(!itemManager.hasItem(id, inventario)){
+			Item item = itemManager.searchItemGame(id);
+			inventario.add(item);
+		}else{
+			Item item = itemManager.searchItem(id, inventario);
+			item.setCantidad(item.getCantidad()+1);
+		}
+	}
 
 }
 	

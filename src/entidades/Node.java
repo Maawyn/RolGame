@@ -1,4 +1,4 @@
-package entitiades;
+package entidades;
 
 public class Node {
 	private Node pred, izq, der;

@@ -1,4 +1,4 @@
-package entitiades;
+package entidades;
 
 import interfaces.IPersonaje;
 

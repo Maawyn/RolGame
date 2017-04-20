@@ -14,7 +14,15 @@ public interface IPersonaje {
 	 */
 	public int atacar(int mod, IPersonaje obje);
 	
+	/**
+	 * 
+	 * @param vida
+	 */
 	public void recuperarVida(int vida);
 	
+	/**
+	 * 
+	 * @param vida
+	 */
 	public void perderVida(int vida);
 }
