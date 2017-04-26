@@ -10,4 +10,24 @@ public class Efect {
 		this.vida = vida;
 		this.id = id;
 	}
+
+	public int getAtaque() {
+		return ataque;
+	}
+
+	public int getDefensa() {
+		return defensa;
+	}
+
+	public int getVida() {
+		return vida;
+	}
+
+	public int getMana() {
+		return mana;
+	}
+
+	public int getId() {
+		return id;
+	}
 }
