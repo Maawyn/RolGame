@@ -94,5 +94,17 @@ public class Node {
 	public void setId(int id){
 		this.id = id;
 	}
-
+	
+	public boolean hasIzq(){
+		return this.izq != null;
+	}
+	
+	public boolean hasDer(){
+		return this.der != null;
+	}
+	
+	@Override
+	public String toString(){
+		return "";
+	}
 }

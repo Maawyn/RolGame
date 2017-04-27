@@ -33,14 +33,15 @@ public class BinaryTree {
 		}
 	}
 	
-	public void nextNode(boolean decision){
-		Node actual = new Node(root);
-		if(decision){
-			actual = actual.getIzq();
-		}else{
-			actual = actual.getDer();
-		}
-	}
+//	public void nextNode(boolean decision){
+//		Node actual = new Node(root);
+//		if(decision){
+//			actual = actual.getIzq();
+//		}else{
+//			actual = actual.getDer();
+//		}
+//	}
+	
 	
 	
 }
