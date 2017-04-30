@@ -33,6 +33,18 @@ public class BinaryTree {
 		}
 	}
 	
+	public Node searchId(int id, Node start){
+		Node actual = start;
+		if(isEmpty()) throw new RuntimeException ("This tree is empty"); 
+		if(actual.getId() == id) return actual; // Base
+		
+		if(actual.hasIzq() && actual.getId() != id) // If the actual node has a different id look the left child
+			actual = searchId(id, actual.getIzq());
+		if(actual.hasDer() && actual.getId() != id)
+			actual = searchId(id, actual.getDer()); // If the actual node has a different id look the right child
+		return actual;
+	}
+	
 //	public void nextNode(boolean decision){
 //		Node actual = new Node(root);
 //		if(decision){

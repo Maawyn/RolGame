@@ -2,7 +2,7 @@ package entidades;
 
 public class Node {
 	private Node pred, izq, der;
-	private Object info;
+	private String info;
 	private int grado, id;
 	
 	public Node() { // Nodo vacio
@@ -14,7 +14,7 @@ public class Node {
 		this.id = -1;
 	}
 	
-	public Node(Object info) { //Nodo con informacion
+	public Node(String info) { //Nodo con informacion
 		this.pred = null;
 		this.izq = null;
 		this.der = null;
@@ -24,7 +24,7 @@ public class Node {
 	}
 
 	
-	public Node(Node pred, Node izq, Node der, Object info, int grado, int id) { //
+	public Node(Node pred, Node izq, Node der, String info, int grado, int id) { //
 		this.pred = pred;
 		this.izq = izq;
 		this.der = der;
@@ -33,7 +33,7 @@ public class Node {
 		this.id = id;
 	}
 	
-	public Node(Node pred, Object info) { //Nodo sin hijos
+	public Node(Node pred, String info) { //Nodo sin hijos
 		this.pred = pred;
 		this.izq = null;
 		this.der = null;
@@ -74,7 +74,7 @@ public class Node {
 		return info;
 	}
 
-	public void setInfo(Object info) {
+	public void setInfo(String info) {
 		this.info = info;
 	}
 
@@ -105,6 +105,6 @@ public class Node {
 	
 	@Override
 	public String toString(){
-		return "";
+		return this.info + "/n 1." + this.getIzq().info ;
 	}
 }
