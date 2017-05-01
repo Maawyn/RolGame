@@ -2,9 +2,8 @@ package tree;
 
 import entidades.Node;
 
-
 public class BinaryTree {
-	Node root;
+	private Node root;
 	
 	public BinaryTree(){
 		root = null;
@@ -23,26 +22,34 @@ public class BinaryTree {
 		return root == null;
 	}
 	
-	public void addTo(Node e, Node parent){
-		if(parent.getIzq() == null){
-			parent.setIzq(e);
-		}else if(parent.getDer() == null){
-			parent.setDer(e);
-		}else{
-			throw new RuntimeException("Childs are full");
+	public void addTo(int idParent, Node e){
+		Node aux = searchId(idParent, root);
+		if(aux.getIzq() == null){
+			aux.setIzq(e);
+			e.setPred(aux);
+		}else if(aux.getDer() == null){
+			aux.setDer(e);
+			e.setPred(aux);
 		}
 	}
 	
 	public Node searchId(int id, Node start){
 		Node actual = start;
 		if(isEmpty()) throw new RuntimeException ("This tree is empty"); 
-		if(actual.getId() == id) return actual; // Base
+		if(actual.getId() == id){
+			return actual; // Base
+		}
 		
 		if(actual.hasIzq() && actual.getId() != id) // If the actual node has a different id look the left child
 			actual = searchId(id, actual.getIzq());
-		if(actual.hasDer() && actual.getId() != id)
-			actual = searchId(id, actual.getDer()); // If the actual node has a different id look the right child
+		if(actual.hasDer() && actual.getId() != id) // If the actual node has a different id look the right child
+			actual = searchId(id, actual.getDer()); 
+		
 		return actual;
+	}
+	
+	public Node getRoot(){
+		return root;
 	}
 	
 //	public void nextNode(boolean decision){
