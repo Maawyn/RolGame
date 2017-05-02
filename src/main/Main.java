@@ -10,22 +10,25 @@ import tree.BinaryTree;
 public class Main {
 
 	public static void main(String[] args) {
-		TreeManager treeManager = new TreeManager();
+		//binaryTree.preOrder(binaryTree.getRoot());
+		TreeManager treeManager = new TreeManager(); //The decision tree was created
 		BinaryTree binaryTree = treeManager.generateBinaryTree();
 		Scanner sc = new Scanner(System.in);
 		Node actual = binaryTree.getRoot();
 		Random rd = new Random();
+//		binaryTree.inOrder(7, actual);
+		
+
 		while(actual.hasChildren()){
-			System.out.println(actual.show()); //Print
-			int pos = sc.nextInt();
+			System.out.println(actual.show()); //Printa el primer nodo y sus hijos.
+			int pos = sc.nextInt(); //Elección del jugador
 			actual = actual.getNext(pos);
-			System.out.println(actual.show());
-			System.out.println(rd.nextBoolean());
 			actual = actual.getNextByIA(rd.nextBoolean());
-			System.out.println(actual.show());
 		}
-		System.out.println("Se acabó el juego.");
-//		System.out.println("¿Hola?");
+		
+		System.out.println(actual.show());
+		System.out.println("////////////////////////\n///Se acabó el juego ///\n////////////////////////");
+		
 //		int elem = 128;
 //		int p = elem;
 //		for(int i = p*2; i< p*4; i++){
@@ -34,6 +37,7 @@ public class Main {
 //				elem++;
 //			}
 //		}
+//		sc.close();
 	}
 
 }

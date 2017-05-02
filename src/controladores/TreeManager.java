@@ -8,19 +8,14 @@ public class TreeManager {
 	public BinaryTree generateBinaryTree(){
 		String name = "Babah";
 		BinaryTree BTree = new BinaryTree();
-		BTree.addRoot(new Node(name + " era la maga más reconocida y más poderosa del reino. Y hacía ya un tiempo, que los habitantes del valle del "
-				+ "Agua Clara estaban siendo afectado por unas tormentas bestiales. Por eso, le habían encargado derrotar al gran rey de la Tormenta, " // MIRAR NOMBRE LUEGO
-				+ "y ahí estaba ella, decidida a acabar con él. Nuestra protagonista " + name + " estaba en un acantilado, a lo lejos podía ver la tormenta. "
-				+ "Entonces " + name + " decidió atravesar las nubes hacia la tormenta.", 0, 1));
+		BTree.addRoot(new Node(name + " era la maga más reconocida y más poderosa del reino. Y hacía ya un tiempo, que los habitantes del valle del \n Agua Clara estaban siendo afectado por unas tormentas bestiales. Por eso, le habían encargado derrotar al gran rey de la Tormenta, \n y ahí estaba ella, decidida a acabar con él. Nuestra protagonista " + name + " estaba en un acantilado, a lo lejos podía ver la tormenta. \n Entonces " + name + " decidió atravesar las nubes hacia la tormenta.", 0, 1));
 		
 		BTree.addTo(1, new Node("1.Caminar",1 ,2));
 		BTree.addTo(1, new Node("2.Pararse",1 ,3));
 		
 		BTree.addTo(2, new Node(name + " vió que había dos caminos hacia dos acantilados nuevos. Se dirigió a la izquierda, hacia la tormenta.", 2, 4));
-		BTree.addTo(2, new Node(name + " caminó hacia una neblina y se perdió en ella durante mucho, mucho tiempo hasta que murió por su avanzada edad."
-				+ " Nunca más se supo de ella y el Rey atormentado siguió atormentado la preciosa ciudad de Aguas Claras.", 2, 5));
-		BTree.addTo(3, new Node("Nuestra heroína aún sabiendo que tenia que ir hacia la tormenta decidió pararse a tomar un cucurucho de helado"
-				+ " en un apacible puesto de comerciantes de las nubes. Después de ello decidió retomar la aventura y andar hacia la tormenta.", 2, 6));
+		BTree.addTo(2, new Node(name + " caminó hacia una neblina y se perdió en ella durante mucho, mucho tiempo hasta que murió por su avanzada edad.\n Nunca más se supo de ella y el Rey atormentado siguió atormentado la preciosa ciudad de Aguas Claras.", 2, 5));
+		BTree.addTo(3, new Node("Nuestra heroína aún sabiendo que tenia que ir hacia la tormenta decidió pararse a tomar un cucurucho de helado \n en un apacible puesto de comerciantes de las nubes. Después de ello decidió retomar la aventura y andar hacia la tormenta.", 2, 6));
 		BTree.addTo(3, new Node(name + " aún sabiendo que tenia que ir hacia la tormetna decidió quedarse quieta, pero la roca en la que se encontraba"
 				+ " empezó a temblar y se desplomó la zona en la que se encontraba precipitandose al vacio, acto seguido fue aplastada por las rocas"
 				+ " y murió. Nunca más se supo de nuetra heroína en Aguas Claras.", 2, 7));
@@ -606,4 +601,21 @@ public class TreeManager {
 		
 		return BTree;
 	}
+//	public BinaryTree generateBinaryTreeTest(){
+//		String name = "Babah";
+//		BinaryTree BTree = new BinaryTree();
+//		BTree.addRoot(new Node(name + " era la maga más reconocida y más poderosa del reino. Y hacía ya un tiempo, que los habitantes del valle del \n Agua Clara estaban siendo afectado por unas tormentas bestiales. Por eso, le habían encargado derrotar al gran rey de la Tormenta, \n y ahí estaba ella, decidida a acabar con él. Nuestra protagonista " + name + " estaba en un acantilado, a lo lejos podía ver la tormenta. \n Entonces " + name + " decidió atravesar las nubes hacia la tormenta.", 0, 1));
+//		
+//		Node root2 = BTree.add(BTree.getRoot(), new Node("1.Caminar",1 ,2));
+//		Node root3 = BTree.add(BTree.getRoot(), new Node("2.Pararse",1 ,3));
+//		
+//		BTree.add(root2, new Node(name + " vió que había dos caminos hacia dos acantilados nuevos. Se dirigió a la izquierda, hacia la tormenta.", 2, 4));
+//		BTree.add(root2, new Node(name + " caminó hacia una neblina y se perdió en ella durante mucho, mucho tiempo hasta que murió por su avanzada edad.\n Nunca más se supo de ella y el Rey atormentado siguió atormentado la preciosa ciudad de Aguas Claras.", 2, 5));
+//		BTree.add(root3, new Node("Nuestra heroína aún sabiendo que tenia que ir hacia la tormenta decidió pararse a tomar un cucurucho de helado \n en un apacible puesto de comerciantes de las nubes. Después de ello decidió retomar la aventura y andar hacia la tormenta.", 2, 6));
+//		BTree.add(root3, new Node(name + " aún sabiendo que tenia que ir hacia la tormetna decidió quedarse quieta, pero la roca en la que se encontraba"
+//				+ " empezó a temblar y se desplomó la zona en la que se encontraba precipitandose al vacio, acto seguido fue aplastada por las rocas"
+//				+ " y murió. Nunca más se supo de nuetra heroína en Aguas Claras.", 2, 7));
+//		return BTree;
+//
+//	}
 }

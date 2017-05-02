@@ -1,14 +1,14 @@
 package entidades;
 
 public class Node {
-	private Node pred, izq, der;
+	private Node pred, left, right;
 	private String info;
 	private int grado, id;
 	
 	public Node() { // Nodo vacio
 		this.pred = null;
-		this.izq = null;
-		this.der = null;
+		this.left = null;
+		this.right = null;
 		this.info = null;
 		this.grado = 0;
 		this.id = -1;
@@ -16,17 +16,17 @@ public class Node {
 	
 	public Node(String info,int grado, int id) { //Nodo con informacion
 		this.pred = null;
-		this.izq = null;
-		this.der = null;
+		this.left = null;
+		this.right = null;
 		this.info = info;
 		this.grado = grado;
 		this.id = id;
 	}
 
-	public Node(Node pred, Node izq, Node der, String info, int grado, int id) { //
+	public Node(Node pred, Node left, Node right, String info, int grado, int id) { //
 		this.pred = pred;
-		this.izq = izq;
-		this.der = der;
+		this.left = left;
+		this.right = right;
 		this.info = info;
 		this.grado = grado;
 		this.id = id;
@@ -41,21 +41,21 @@ public class Node {
 	}
 
 	
-	public Node getIzq() {
-		return izq;
+	public Node getLeft() {
+		return left;
 	}
 
-	public void setIzq(Node izq) {
-		this.izq = izq;
+	public void setLeft(Node left) {
+		this.left = left;
 	}
 
 	
-	public Node getDer() {
-		return der;
+	public Node getRight() {
+		return right;
 	}
 
-	public void setDer(Node der) {
-		this.der = der;
+	public void setRight(Node right) {
+		this.right = right;
 	}
 
 
@@ -84,30 +84,30 @@ public class Node {
 		this.id = id;
 	}
 	
-	public boolean hasIzq(){
-		return this.izq != null;
+	public boolean hasLeft(){
+		return this.left != null;
 	}
 	
 	public boolean hasChildren(){
-		return hasIzq() && hasDer();
+		return hasLeft() && hasRight();
 	}
 	
-	public boolean hasDer(){
-		return this.der != null;
+	public boolean hasRight(){
+		return this.right != null;
 	}
 	
 	public Node getNext(int pos){
 		if(pos == 1)
-			return this.izq;
+			return this.left;
 		if(pos == 2)
-			return this.der;
+			return this.right;
 		return null;
 	}
 	public Node getNextByIA(boolean pos){
 		if(pos)
-			return this.izq;
+			return this.left;
 		if(!pos)
-			return this.der;
+			return this.right;
 		return null;
 	}
 	@Override
@@ -115,6 +115,9 @@ public class Node {
 		return this.info;
 	}
 	public String show(){
-		return "" + this.info + "\n" + this.getIzq().toString() + "\n" + this.getDer().toString();
+		String message = this.info;
+		if(hasLeft()) message += "\n"+ this.getLeft().toString();
+		if(hasRight()) message += "\n"+ this.getRight().toString();
+		return message;
 	}
 }
